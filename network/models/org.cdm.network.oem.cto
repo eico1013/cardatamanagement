@@ -1,0 +1,11 @@
+namespace org.cdm.network.oem
+
+/** OEm is an Network  participant*/
+
+participant Oem identified by oemId {
+  o String      oemId
+
+  //oem information
+  o String      name
+
+}

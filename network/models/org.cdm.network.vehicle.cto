@@ -1,0 +1,24 @@
+namespace org.cdm.network.vehicle
+
+import org.cdm.network.oem.Oem
+
+/** Vehicle is an ACME Asset*/
+
+asset Vehicle identified by vehicleId {
+  o String      vehicleId
+
+  //manufacturer
+  --> Oem oem 
+
+  // distance measurement
+  o Double      drivenUnits     range = [0.0,]
+  o UnitSystem  unitSystemType
+
+  // operation measurement
+  o Double      operatingHours  range = [0.0,]
+}
+
+enum UnitSystem {
+  o Metric
+  o Miles
+}
