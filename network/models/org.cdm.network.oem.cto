@@ -1,5 +1,7 @@
 namespace org.cdm.network.oem
 
+import org.cdm.network.vehicle.Vehicle
+
 /** OEm is an Network  participant*/
 
 participant Oem identified by oemId {
@@ -8,4 +10,8 @@ participant Oem identified by oemId {
   //oem information
   o String      name
 
+}
+
+transaction RegisterNewVehicle {
+  o Vehicle vehicle
 }

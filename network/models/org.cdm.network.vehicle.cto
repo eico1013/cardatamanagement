@@ -6,9 +6,13 @@ import org.cdm.network.oem.Oem
 
 asset Vehicle identified by vehicleId {
   o String      vehicleId
+  o String      vin
 
   //manufacturer
-  --> Oem oem 
+  --> Oem oem
+
+  // manifacturing data
+  o DateTime      manufacturingDate
 
   // distance measurement
   o Double      drivenUnits     range = [0.0,]
@@ -21,4 +25,12 @@ asset Vehicle identified by vehicleId {
 enum UnitSystem {
   o Metric
   o Miles
+}
+
+
+/*Vehicle Transactions */
+transaction UpdateVehicleData {
+  --> Vehicle vehicle
+  o Double  newDrivenUnits
+  o Double  newOperatingHours
 }
