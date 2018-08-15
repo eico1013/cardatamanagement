@@ -1,0 +1,13 @@
+// Selects flights based on the origin and destination
+query IsVehicleDataValid {
+  description: "Returns true or false after checking for latest vehicle entry"
+  statement:  
+    SELECT  org.cdm.network.vehicle.Vehicle
+      WHERE   (drivenUnits == _$driven_Units AND vehicleId  == _$vehicleId )
+}
+
+query AllVehicle {
+  description: "Returns true or false after checking for latest vehicle entry"
+  statement:  
+    SELECT  org.cdm.network.vehicle.Vehicle
+}
